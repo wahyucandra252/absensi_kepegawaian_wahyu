@@ -1,0 +1,42 @@
+  h1,h2,p,a{
+    font-family: monospace;
+    font-weight: normal;
+  }
+
+  .jam-digital-malasngoding {
+    overflow: hidden;
+    width: 335px;
+    margin: 20px auto;
+  }
+  .kotak{
+    float: left;
+    width: 108px;
+    height: 100px;
+    background-color: white;
+  }
+  .jam-digital-malasngoding p {
+    color: black;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 30px;
+  }
+  input{
+    border: none;
+    width: 100%;
+    background: none;
+    color: white;
+  }
+  td{
+    font-size: 26px;
+    color: white;
+  }
+  th{
+    font-size: 30px;
+    color: white;
+  }
+  .keterangan{
+    margin-bottom: 20px;
+    font-size: 28px;
+     font-family: monospace;
+    font-weight: normal;
+  }

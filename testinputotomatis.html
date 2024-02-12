@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get and Set User Location</title>
+</head>
+<body>
+
+  <h1>User Location</h1>
+  <p>Latitude: <span id="latitude"></span>, Longitude: <span id="longitude"></span></p>
+
+  <label for="latitudeInput">Latitude Input:</label>
+  <input type="text" id="latitudeInput">
+
+  <label for="longitudeInput">Longitude Input:</label>
+  <input type="text" id="longitudeInput">
+
+  <script>
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+      } else {
+        alert("Geolocation is not supported by this browser.");
+      }
+    }
+
+    function showPosition(position) {
+      var latitude = position.coords.latitude;
+      var longitude = position.coords.longitude;
+
+      // Update HTML elements with latitude and longitude
+      document.getElementById("latitude").textContent = latitude;
+      document.getElementById("longitude").textContent = longitude;
+
+      // Update input fields with latitude and longitude
+      document.getElementById("latitudeInput").value = latitude;
+      document.getElementById("longitudeInput").value = longitude;
+    }
+
+    function showError(error) {
+      switch(error.code) {
+        case error.PERMISSION_DENIED:
+          alert("User denied the request for Geolocation.");
+          break;
+        case error.POSITION_UNAVAILABLE:
+          alert("Location information is unavailable.");
+          break;
+        case error.TIMEOUT:
+          alert("The request to get user location timed out.");
+          break;
+        case error.UNKNOWN_ERROR:
+          alert("An unknown error occurred.");
+          break;
+      }
+    }
+
+    // Get user location when the page loads
+    window.onload = getLocation;
+  </script>
+
+</body>
+</html>
